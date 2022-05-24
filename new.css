@@ -1,0 +1,39 @@
+        td
+        {
+        padding: 2px;
+        border: 1px solid black;
+        }
+    
+        body
+        {
+            background: linear-gradient(to right, #43c6ac, #f8ffae);
+        }
+    
+        h1
+        {
+           text-shadow: 3px 2px 15px #4D4DFF;
+        }
+    
+        .img1
+        {
+            width: 200px;
+            height: 250px;
+            border:2px solid #fff;
+            float: right;
+        }
+    
+        table
+        {
+            border: 1px dashed rgb(248, 79, 28);
+        }
+    
+        .sig
+        {
+            margin-left: 80%;
+        }
+    
+        h5
+        {
+            margin-left: 83%;
+        }
+    
