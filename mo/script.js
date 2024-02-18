@@ -10,30 +10,43 @@ $(document).ready(function () {
     $('.screen').toggleClass('glitch');
   });
 
-  function updateCountdown() {
-    const now = new Date();
-    const endOfDay = new Date(now);
-    endOfDay.setHours(23, 59, 59, 999); // Set the end of the day to 23:59:59.999
+  // function updateCountdown() {
+  //   const now = new Date();
+  //   const endOfDay = new Date(now);
+  //   endOfDay.setHours(23, 59, 59, 999); // Set the end of the day to 23:59:59.999
 
-    const timeRemaining = endOfDay - now;
-    const hours = Math.floor(timeRemaining / (1000 * 60 * 60));
-    const minutes = Math.floor((timeRemaining / (1000 * 60)) % 60);
-    const seconds = Math.floor((timeRemaining / 1000) % 60);
-    const milliseconds = timeRemaining % 1000;
+  //   const timeRemaining = endOfDay - now;
+  //   const hours = Math.floor(timeRemaining / (1000 * 60 * 60));
+  //   const minutes = Math.floor((timeRemaining / (1000 * 60)) % 60);
+  //   const seconds = Math.floor((timeRemaining / 1000) % 60);
+  //   const milliseconds = timeRemaining % 1000;
     
-    //const fhours = hours.toString().padStart(3, '0');
-    //const fminutes = minutes.toString().padStart(3, '0');
-   //const fseconds = seconds.toString().padStart(3, '0');
-    const fmilliseconds  = milliseconds .toString().padStart(3, '0');
+  //   //const fhours = hours.toString().padStart(3, '0');
+  //   //const fminutes = minutes.toString().padStart(3, '0');
+  //  //const fseconds = seconds.toString().padStart(3, '0');
+  //   const fmilliseconds  = milliseconds .toString().padStart(3, '0');
 
-    //var realTime = (hours < 10 ? '0' : '') + hours + ' : ' + (minutes < 10 ? '0' : '') + minutes + ' : ' + (seconds < 10 ? '0' : '') + seconds;
-    var realTime = hours + ' : ' + minutes + ' : ' + seconds + ' : ' + fmilliseconds;
+  //   //var realTime = (hours < 10 ? '0' : '') + hours + ' : ' + (minutes < 10 ? '0' : '') + minutes + ' : ' + (seconds < 10 ? '0' : '') + seconds;
+  //   var realTime = hours + ' : ' + minutes + ' : ' + seconds + ' : ' + fmilliseconds;
 
+  //   $('.time').html(realTime);
+  //   $('.time').attr('data-time', realTime);
+  // }
+
+  // setInterval(updateCountdown, 20);
+
+  var worker = new Worker('worker.js');
+
+  //debug
+console.log("Worker called");
+
+// Listen for messages from the web worker
+  worker.addEventListener('message', function(e) {
+    var realTime = e.data;
     $('.time').html(realTime);
     $('.time').attr('data-time', realTime);
-  }
+  });
 
-  setInterval(updateCountdown, 20);
 });
 
 document.addEventListener("DOMContentLoaded", function() {
