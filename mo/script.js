@@ -51,14 +51,24 @@ console.log("Worker called");
 
 document.addEventListener("DOMContentLoaded", function() {
     const quotes = [
-        "One day OR Day one ",
+        "One day OR Day one",
         "Time Won't stop for any one",
         "Lost time is never found again.",
         "The most precious resource we all have is time",
         "Time is money",
         "Yesterday is history, Tomorrow is a mystery, but Today is a gift. That is why it is called the present",
-        "The future starts today, not tomorrow"
+        "The future starts today, not tomorrow",
+        "Time waits for no one.",
+        "Your time is limited, so don’t waste it living someone else’s life.",
+        "The way we spend our time defines who we are.",
+        "Don’t watch the clock; do what it does. Keep going.",
+        "Time flies over us, but leaves its shadow behind.",
+        "The key is in not spending time, but in investing it.",
+        "Better three hours too soon than a minute too late.",
+        "It’s not that we have little time, but more that we waste a good deal of it.",
+        "Do something today that your future self will thank you for."
     ];
+
 
     // Function to display a random quote
     function displayRandomQuote() {
