@@ -13,7 +13,7 @@ $(document).ready(function () {
     const worker = new Worker("worker.js");
 
     // Change to your birthdate (format: YYYY-MM-DDTHH:mm:ss)
-    worker.postMessage("2003-04-05T10:30:00");
+    worker.postMessage("2003-05-04T10:30:00");
 
     console.log("Worker started");
 
